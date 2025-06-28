@@ -1,0 +1,10 @@
+packages:
+  - packages/*
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - cypress
+  - esbuild
+  - nx
+  - sharp
+  - unrs-resolver
