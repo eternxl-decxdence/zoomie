@@ -2,9 +2,9 @@ import { easeOut, motion, AnimatePresence, easeIn } from 'motion/react'
 import { forwardRef, useState } from 'react'
 import { IButton } from './Button.types'
 import {
-  getButtonClassNames,
-  getIconSizeClass,
-  rippleBorderRadius,
+  getButtonStyles,
+  getBorderRadius,
+  getIconStyles,
 } from './Button.config'
 import clsx from 'clsx'
 const Button = forwardRef<HTMLButtonElement, IButton>(
@@ -54,7 +54,7 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
           }
           className={clsx(
             'z-10 relative',
-            getButtonClassNames(color, variant, size, isIconOnly, disabled)
+            getButtonStyles(color, variant, size, isIconOnly, disabled)
           )}
           onPointerUp={!disabled ? () => onClickAnimated() : undefined}
           {...rest}
@@ -63,7 +63,7 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
             <div
               className={clsx(
                 'text-inherit aspect-square',
-                getIconSizeClass(size)
+                getIconStyles(size)
               )}
             >
               {icon}
@@ -79,8 +79,8 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
                 opacity: 1,
               }}
               animate={{
-                scaleX: 1.3,
-                scaleY: isIconOnly ? 1.3 : 1.6,
+                scaleX: isIconOnly ? 1.6 : 1.3,
+                scaleY: 1.6,
                 opacity: 0,
                 transition: {
                   scaleX: { duration: 0.4, ease: easeIn },
@@ -98,7 +98,7 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
               }}
               className={clsx(
                 'absolute inset-0 z-0 dark:bg-default-50/50 bg-default-700/50 pointer-events-none ',
-                rippleBorderRadius(size)
+                getBorderRadius(size)
               )}
             />
           )}
@@ -110,25 +110,3 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
 
 Button.displayName = 'Button'
 export default Button
-/* 
-                    -------------
-                    |   CLICK   |
-                    -------------
-
-                    =>
-
-                    -----Ripple------
-                    | ------------- |
-                    | |   CLICK   | |
-                    | ------------- |
-                    -----------------
-
-                    =>
-
-                    -------------
-                    |   CLICK   |
-                    -------------
-
-
-
-*/

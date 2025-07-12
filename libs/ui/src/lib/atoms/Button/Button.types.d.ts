@@ -10,7 +10,7 @@ export interface IButton
     'onClick' | 'className' | 'disabled'
   > {
   icon?: ReactNode
-  size?: string
+  size?: ButtonSizes
   label?: string
   color?: ButtonColor
   disabled?: boolean

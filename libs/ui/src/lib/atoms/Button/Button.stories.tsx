@@ -21,17 +21,17 @@ const meta: Meta<typeof Button> = {
     },
     color: {
       control: 'radio',
-      options: [...buttonColors] as string[],
+      options: [...buttonColors],
       description: 'Button color',
     },
     variant: {
       control: 'radio',
-      options: [...buttonVariants] as string[],
+      options: [...buttonVariants],
       description: 'Button variant',
     },
     size: {
       control: 'radio',
-      options: [...buttonSizes] as string[],
+      options: [...buttonSizes],
       description: 'Button size bazed on font scale',
     },
     disabled: {
