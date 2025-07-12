@@ -1,0 +1,70 @@
+@import './font-faces.css';
+
+@theme static {
+  --spacing: 0.25rem;
+
+  --font-inter: 'Inter', sans-serif;
+  --font-jetmono: 'JetBrains Mono', 'monospaced';
+  --font-manroper: 'Manrope';
+
+  --color-accent-50: var(--color-emerald-50);
+  --color-accent-100: var(--color-emerald-100);
+  --color-accent-200: var(--color-emerald-200);
+  --color-accent-300: var(--color-emerald-300);
+  --color-accent-400: var(--color-emerald-400);
+  --color-accent-500: var(--color-emerald-500);
+  --color-accent-600: var(--color-emerald-600);
+  --color-accent-700: var(--color-emerald-700);
+  --color-accent-800: var(--color-emerald-800);
+  --color-accent-900: var(--color-emerald-900);
+  --color-accent-950: var(--color-emerald-950);
+
+  --color-error-50: var(--color-rose-50);
+  --color-error-100: var(--color-rose-100);
+  --color-error-200: var(--color-rose-200);
+  --color-error-300: var(--color-rose-300);
+  --color-error-400: var(--color-rose-400);
+  --color-error-500: var(--color-rose-500);
+  --color-error-600: var(--color-rose-600);
+  --color-error-700: var(--color-rose-700);
+  --color-error-800: var(--color-rose-800);
+  --color-error-900: var(--color-rose-900);
+  --color-error-950: var(--color-rose-950);
+
+  --color-warning-50: var(--color-orange-50);
+  --color-warning-100: var(--color-orange-100);
+  --color-warning-200: var(--color-orange-200);
+  --color-warning-300: var(--color-orange-300);
+  --color-warning-400: var(--color-orange-400);
+  --color-warning-500: var(--color-orange-500);
+  --color-warning-600: var(--color-orange-600);
+  --color-warning-700: var(--color-orange-700);
+  --color-warning-800: var(--color-orange-800);
+  --color-warning-900: var(--color-orange-900);
+  --color-warning-950: var(--color-orange-950);
+
+  --color-success-50: var(--color-indigo-50);
+  --color-success-100: var(--color-indigo-100);
+  --color-success-200: var(--color-indigo-200);
+  --color-success-300: var(--color-indigo-300);
+  --color-success-400: var(--color-indigo-400);
+  --color-success-500: var(--color-indigo-500);
+  --color-success-600: var(--color-indigo-600);
+  --color-success-700: var(--color-indigo-700);
+  --color-success-800: var(--color-indigo-800);
+  --color-success-900: var(--color-indigo-900);
+  --color-success-950: var(--color-indigo-950);
+
+  --color-default-50: var(--color-slate-50);
+  --color-default-100: var(--color-slate-100);
+  --color-default-200: var(--color-slate-200);
+  --color-default-300: var(--color-slate-300);
+  --color-default-400: var(--color-slate-400);
+  --color-default-500: var(--color-slate-500);
+  --color-default-600: var(--color-slate-600);
+  --color-default-700: var(--color-slate-700);
+  --color-default-800: var(--color-slate-800);
+  --color-default-900: var(--color-slate-900);
+  --color-default-950: var(--color-slate-950);
+}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
