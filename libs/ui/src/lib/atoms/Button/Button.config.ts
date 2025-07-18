@@ -2,31 +2,21 @@ import {
   type ButtonSizes,
   type ButtonColor,
   type ButtonVariants,
+  type ConfigButtonVariantsStyles,
+  type ConfigButtonStates,
+  type ConfigButtonLogic,
+  type ConfigButtonSizing,
 } from './Button.types'
 import { defineStyleMap } from '../../../utlis/defineStyleMap'
 import clsx from 'clsx'
+import { AtomComponentConfig } from '../../types/AtomComponentConfig'
 
-const buttonConfig = {
-  tokens: {
-    colors: [
-      'accent',
-      'default',
-      'success',
-      'error',
-      'warning',
-    ] as ButtonColor[],
-    variants: ['solid', 'outline', 'text'] as ButtonVariants[],
-    sizes: [
-      'xs',
-      'sm',
-      'base',
-      'lg',
-      'xl',
-      '2xl',
-      '3xl',
-      '4xl',
-    ] as ButtonSizes[],
-  },
+const сonfig: AtomComponentConfig<
+  ConfigButtonSizing,
+  ConfigButtonVariantsStyles,
+  ConfigButtonStates,
+  ConfigButtonLogic
+> = {
   styles: {
     base: 'font-inter w-fit h-fit font-semibold leading-none flex justify-center items-center gap-1 transition-colors duration-300 ease-out',
     sizing: {
@@ -104,7 +94,7 @@ const buttonConfig = {
           'hover:bg-default-700 hover hover:text-default-50 text-default-500',
       },
     },
-    state: {
+    states: {
       disabled: 'bg-default-700 text-default-800 opacity-75',
     },
   },
@@ -116,11 +106,11 @@ const buttonConfig = {
       iconOnly: boolean,
       disabled: boolean
     ) => {
-      const styles = buttonConfig.styles
+      const styles = сonfig.styles
       return clsx(
         styles.base,
         disabled
-          ? styles.state.disabled
+          ? styles.states.disabled
           : [
               styles.variants.basic[variant],
               styles.variants.styled[`${variant}-${color}`],
@@ -135,15 +125,13 @@ const buttonConfig = {
       )
     },
     getIconStyles: (size: ButtonSizes) => {
-      const styles = buttonConfig.styles
+      const styles = сonfig.styles
       return clsx(styles.sizing.iconOnly.font[size])
     },
     getBorderRadius: (size: ButtonSizes) => {
-      const styles = buttonConfig.styles
+      const styles = сonfig.styles
       return clsx(styles.sizing.border[size])
     },
   },
 }
-export const { getButtonStyles, getIconStyles, getBorderRadius } =
-  buttonConfig.logic
-export const tokens = buttonConfig.tokens
+export const { getButtonStyles, getIconStyles, getBorderRadius } = сonfig.logic
