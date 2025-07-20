@@ -38,15 +38,15 @@ const Subheader = (
   return <TextComponent variant="subheading" level={level} {...props} />
 }
 
-const Paragraph = (props: Omit<IText, 'variant'>) => {
+const Paragraph = (props: Omit<IText, 'level' | 'variant'>) => {
   return <TextComponent variant="paragraph" {...props} />
 }
 
-const Label = (props: Omit<IText, 'variant'>) => {
+const Label = (props: Omit<IText, 'level' | 'variant'>) => {
   return <TextComponent variant="label" {...props} />
 }
 
-const Line = (props: Omit<IText, 'variant'>) => {
+const Line = (props: Omit<IText, 'level' | 'variant'>) => {
   return <TextComponent variant="line" {...props} />
 }
 
